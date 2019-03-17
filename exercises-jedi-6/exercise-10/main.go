@@ -5,31 +5,41 @@ import "fmt"
 var x int
 
 func main() {
-	x = 10
 
-	fmt.Println(closeOver())
-	fmt.Println(x)
+	fmt.Printf("\n%v\n\n\n", "About  C'L'O'S'U'R'E  ...")
 
-	f := foo()
-	fmt.Println(f())
-	fmt.Println(f())
-	fmt.Println(f())
-	fmt.Println(f())
-	fmt.Println(f())
+	// x = 10
+	//
+	// fmt.Println("main(): closeOver() method returns =", closeOver())
+	// fmt.Println("main(): x =", x)
+
+	a := foo()
+	b := foo()
+
+	fmt.Println(a())
+	fmt.Println(a())
+	fmt.Println(a())
+	fmt.Println(a())
+	fmt.Println(a())
+
+	fmt.Println(b())
+	fmt.Println(b())
+	fmt.Println(b())
+	fmt.Println(b())
 
 }
 
-func closeOver() string {
-	fmt.Println(x)
-	x := "Fred"
-	fmt.Println(x)
-	return x
-}
+// func closeOver() string {
+// 	fmt.Println("before x initialised locally in closeOver(): x =", x)
+// 	x := "Fred"
+// 	fmt.Println("after x is initialised and assigned in closeOver(): x =", x)
+// 	return x
+// }
 
 func foo() func() int {
-	x := 0
+	y := 0
 	return func() int {
-		x++
-		return x
+		y++
+		return y
 	}
 }
